@@ -5,32 +5,16 @@ package Dogs;
  * Created by qianpeili on 2017/3/13.
  */
 public class Dog {
+    int size;
     String name;
 
-    public void bark() {
-        System.out.println(name + " says Ruff!");
-    }
-
-    public static void main (String [] args) {
-        Dog dog1 = new Dog();
-        dog1.bark();
-        dog1.name = "Bart";
-
-        Dog[] myDogs = new Dog[3];
-        myDogs[0] = new Dog();
-        myDogs[1] = new Dog();
-        myDogs[2] = dog1;
-
-        myDogs[0].name = "Fred";
-        myDogs[1].name = "Marge";
-
-        System.out.print("last dog's name is ");
-        System.out.println(myDogs[2].name);
-
-        int x = 0;
-        while (x < myDogs.length) {
-            myDogs[x].bark();
-            x = x + 1;
+    void bark() {
+        if (size > 60) {
+            System.out.println("Woof! Woof!");
+        } else if(size > 14) {
+            System.out.println("Ruff! Ruff!");
+        } else {
+            System.out.println("Yip! Yip!");
         }
     }
 }

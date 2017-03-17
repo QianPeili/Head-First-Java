@@ -5,8 +5,16 @@ package Dogs;
  * Created by qianpeili on 2017/3/13.
  */
 public class Dog {
-    int size;
+    private int size;
     String name;
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int s) {
+        size = s;
+    }
 
     void bark(int numOfBarks) {
         while (numOfBarks > 0) {

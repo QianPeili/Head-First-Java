@@ -12,8 +12,8 @@ public class DogTestDrive {
         Dog three = new Dog();
         three.size = 35;
 
-        one.bark();
-        two.bark();
-        three.bark();
+        one.bark(1);
+        two.bark(2);
+        three.bark(3);
     }
 }

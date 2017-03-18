@@ -1,35 +1,28 @@
 package DotCom;
 
+import java.util.ArrayList;
+
 /**
  * Created by qianpeili on 2017/3/18.
  */
 public class SimpleDotCom {
 
-    int[] locationCells;
-    int numberOfHits = 0;
+    private ArrayList<String> locationCells;
 
-    public void setLocationCells(int[] locations){
+    public void setLocationCells(ArrayList<String> locations){
         locationCells = locations;
     }
 
     public String checkYourself(String stringGuess){
-
-        int guess = Integer.parseInt(stringGuess);
         String result = "miss";
 
-        for (int cell: locationCells) {
-            if (guess == cell) {
-                result = "hit";
-                numberOfHits++;
-                break;
-            }
+        int index = locationCells.indexOf(stringGuess);
+        if (index >=0) {
+            locationCells.remove(index);
+            if (locationCells.isEmpty()) {
+                result = "kill";
+            }else result = "hit";
         }
-
-        if (numberOfHits == locationCells.length) {
-            result = "kill";
-        }
-
-        System.out.println(result);
         return result;
     }
 
